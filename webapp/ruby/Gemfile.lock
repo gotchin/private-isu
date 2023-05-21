@@ -1,20 +1,64 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (7.0.4.3)
+      activesupport (= 7.0.4.3)
+    activerecord (7.0.4.3)
+      activemodel (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
+    activesupport (7.0.4.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    ast (2.4.2)
+    concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     dalli (3.2.4)
     foreman (0.87.2)
+    gda (1.1.4)
+    i18n (1.13.0)
+      concurrent-ruby (~> 1.0)
+    json (2.6.3)
     kgio (2.11.4)
+    minitest (5.18.0)
     multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.5)
+    parallel (1.23.0)
+    parser (3.2.2.1)
+      ast (~> 2.4.1)
     rack (2.2.7)
     rack-flash3 (1.0.5)
       rack
     rack-protection (3.0.6)
       rack
+    rainbow (3.1.1)
     raindrops (0.20.1)
+    regexp_parser (2.8.0)
+    rexml (3.2.5)
+    rubocop (1.51.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.28.1)
+      parser (>= 3.2.1.0)
+    rubocop-isucon (0.2.0)
+      activerecord (>= 6.1.0)
+      gda (!= 1.1.2)
+      rubocop (>= 1.29.0)
+      rubocop-performance
+    rubocop-performance (1.18.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sinatra (3.0.6)
       mustermann (~> 3.0)
@@ -28,12 +72,16 @@ GEM
       sinatra (= 3.0.6)
       tilt (~> 2.0)
     tilt (2.1.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
     unicorn (6.1.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
 
 PLATFORMS
   aarch64-linux
+  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -43,6 +91,7 @@ DEPENDENCIES
   mysql2
   rack
   rack-flash3
+  rubocop-isucon
   sinatra
   sinatra-contrib
   unicorn

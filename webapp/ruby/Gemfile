@@ -10,3 +10,7 @@ gem "mysql2"
 gem "rack-flash3"
 gem 'connection_pool'
 gem "dalli"
+
+group :development do
+  gem 'rubocop-isucon', require: false
+end
