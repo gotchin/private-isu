@@ -422,9 +422,7 @@ module Isuconp
 
       query = 'UPDATE `users` SET `del_flg` = ? WHERE `id` = ?'
 
-      params['uid'].each do |id|
-        db.xquery(query,1, id.to_i)
-      end
+      db.xquery(query, 1, params['uid'])
 
       redirect '/admin/banned', 302
     end
